@@ -1,0 +1,45 @@
+# Python environments and generated files
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Packaged applications and installers
+build/
+dist/
+installer_output/
+signed_output/
+*.exe
+*.msi
+
+# Documents and signature material must never enter Git
+*.pdf
+*.doc
+*.docx
+*.pem
+*.key
+*.p12
+*.pfx
+*.p7b
+*.p7c
+*.cer
+*.crt
+*.db
+*.sqlite
+*.sqlite3
+
+# Local diagnostics retained in the private working copy
+analyze_*.py
+prepare_watermark.py
+preview_signature.py
+test_*.py
+verify_*.py
+
+# Local analysis and editor state
+graphify-out/
+.codex/
+.claude/
+.idea/
+.vscode/

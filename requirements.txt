@@ -1,0 +1,59 @@
+# RDC Digital Signatures - Dependencies
+# Comprehensive requirements file - audited line by line from all source files
+# Last updated: 2026-02-03
+
+# ===== GUI FRAMEWORK =====
+# main.py: import customtkinter as ctk
+# login_dialog.py: import customtkinter as ctk  
+customtkinter>=5.2.0
+
+# ===== PDF PROCESSING =====
+# main.py: from backend import pdf_processor, analyzer, signer
+# analyzer.py: import fitz
+# pdf_processor.py: import fitz  # PyMuPDF
+# signer.py: import fitz
+PyMuPDF>=1.23.0
+
+# ===== DIGITAL SIGNATURE (PYHANKO) =====
+# signer.py: from pyhanko.sign import signers, fields
+# signer.py: from pyhanko.pdf_utils.incremental_writer import IncrementalPdfFileWriter
+# signer.py: from pyhanko.sign.fields import SigSeedSubFilter
+# signer.py: from pyhanko.stamp import TextStampStyle
+# signer.py: from pyhanko.sign.pkcs11 import PKCS11Signer, open_pkcs11_session, PROTECTED_AUTH
+pyHanko[pkcs11]>=0.21.0
+
+# ===== PKCS#11 HARDWARE TOKEN SUPPORT =====
+# signer.py: import pkcs11
+python-pkcs11>=0.7.0
+
+# ===== CRYPTOGRAPHY (REQUIRED BY PYHANKO) =====
+# Transitive dependency but explicitly listed for completeness
+cryptography>=41.0.0
+
+# ===== IMAGE HANDLING (FOR ICONS/UI) =====
+# Used by customtkinter internally for image loading
+Pillow>=10.0.0
+
+# ===== CERTIFICATE VALIDATION (PYHANKO DEPENDENCY) =====
+# Transitive but important for certificate chain validation
+certifi>=2023.0.0
+
+# ===== ASN.1 PARSING (PYHANKO DEPENDENCY) =====
+# Required for X.509 certificate parsing
+asn1crypto>=1.5.0
+
+# ===== OSCRYPTO (PYHANKO DEPENDENCY) =====
+# Required for cryptographic operations
+oscrypto>=1.3.0
+
+# ===== CFFI (CRYPTOGRAPHY DEPENDENCY) =====
+# Required for native crypto bindings
+cffi>=1.15.0
+
+# ===== STANDARD LIBRARY MODULES USED =====
+# These are built-in Python modules (no installation needed):
+# - os, sys, time, threading (main.py)
+# - datetime, socket, tempfile, shutil, subprocess, traceback (signer.py)
+# - sqlite3, hashlib, secrets, base64 (auth.py)
+# - ctypes (login_dialog.py - caps lock detection)
+# - getpass (set_credentials.py)
