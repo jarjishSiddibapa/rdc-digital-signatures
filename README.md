@@ -20,6 +20,15 @@ The application was built to replace a paid per-user signing utility and reduce 
 | Local access | PBKDF2-hashed local users and an optional environment-configured administrator |
 | Distribution | PyInstaller and Inno Setup definitions for a Windows installer |
 
+## Screenshots
+
+> Taken from a local run with a fictional PDF and a demo user, with no hardware token connected, so the certificate menu is empty and no real signature is shown.
+
+| | |
+|---|---|
+| ![Sign-in](docs/screenshots/01-sign-in.png) **Sign-in** (local users, PBKDF2-hashed) | ![Text placement](docs/screenshots/02-main-text-placement.png) **Text-based placement**: find a label such as a role/title and sign beside it |
+| ![Visual placement](docs/screenshots/03-visual-placement.png) **Visual placement**: preview the PDF and drag and resize the signature box | |
+
 ## Quick start
 
 ```powershell
